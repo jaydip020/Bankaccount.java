@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validate()">
+
+Name: <input type="text" id="name"><br><br>
+Mobile: <input type="text" id="mobile"><br><br>
+Password: <input type="password" id="pass"><br><br>
+Confirm Password: <input type="password" id="cpass"><br><br>
+
+<input type="submit" value="Register">
+
+</form>
+
+<script>
+
+function validate() {
+
+    let name = document.getElementById("name").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let pass = document.getElementById("pass").value;
+    let cpass = document.getElementById("cpass").value;
+
+    if (name == "") {
+        alert("Name required");
+        return false;
+    }
+
+    if (mobile.length != 10 || isNaN(mobile)) {
+        alert("Enter valid 10 digit mobile number");
+        return false;
+    }
+
+    if (pass.length < 6) {
+        alert("Password must be 6 characters");
+        return false;
+    }
+
+    if (pass != cpass) {
+        alert("Passwords not match");
+        return false;
+    }
+
+    alert("Registration Successful");
+    return true;
+}
+
+</script>
+
+</body>
+</html>
