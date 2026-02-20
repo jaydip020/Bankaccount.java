@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Size Changer</title>
+    <style>
+        #content {
+            border: 2px solid gray;
+            padding: 20px;
+            font-size: 16px;
+            max-width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Font Size Controller</h2>
+
+<select id="fontSize">
+    <option value="">Select Size</option>
+    <option value="14">Small</option>
+    <option value="18">Medium</option>
+    <option value="24">Large</option>
+    <option value="30">Extra Large</option>
+</select>
+
+<p id="content">
+    Sample text for font size change.
+</p>
+
+<script>
+
+let dropdown = document.getElementById("fontSize");
+let content = document.getElementById("content");
+
+dropdown.addEventListener("change", function () {
+
+    let size = dropdown.value;
+
+    if (size == "") {
+        alert("Please select a font size");
+        content.style.fontSize = "16px";   // default reset
+        return;
+    }
+
+    content.style.fontSize = size + "px";
+});
+
+</script>
+
+</body>
+</html>
