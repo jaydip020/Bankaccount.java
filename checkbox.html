@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me Validation</title>
+</head>
+<body>
+
+    <h2>About Me</h2>
+
+    <form id="about">
+
+        Name: <br>
+        <input type="text" id="name"><br><br>
+
+        About Me: <br>
+        <textarea id="about_me"></textarea><br><br>
+
+        Languages Known: <br>
+        <input type="checkbox" class="languages_known" value="English"> English <br>
+        <input type="checkbox" class="languages_known" value="Hindi"> Hindi <br>
+        <input type="checkbox" class="languages_known" value="Gujarati"> Gujarati <br><br>
+
+        <button type="submit">Save</button>
+
+    </form>
+
+    <script>
+        document.getElementById("about").addEventListener("submit", function(e){
+
+            if(document.getElementById("name").value.trim() === ""){
+                alert("Please enter name");
+                e.preventDefault();
+                return;
+            }
+
+            if(document.getElementById("about_me").value.trim() === ""){
+                alert("Please enter details about you");
+                e.preventDefault();
+                return;
+            }
+
+            if(document.querySelectorAll(".languages_known:checked").length === 0){
+                alert("Please select at least one language");
+                e.preventDefault();
+                return;
+            }
+
+            alert("Validation Successful!");
+        });
+    </script>
+
+</body>
+</html>
