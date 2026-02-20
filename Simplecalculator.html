@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Counter</title>
+</head>
+<body>
+
+<h2>Simple Counter</h2>
+
+<button onclick="decrease()">-</button>
+<span id="count">0</span>
+<button onclick="increase()">+</button>
+
+<script>
+
+let count = 0;
+
+function increase() {
+    count++;
+    document.getElementById("count").innerText = count;
+}
+
+function decrease() {
+    count--;
+    document.getElementById("count").innerText = count;
+}
+
+</script>
+
+</body>
+</html>
