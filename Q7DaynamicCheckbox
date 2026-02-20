@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Checkbox</title>
+</head>
+<body>
+
+    <h3>Add Dynamic Checkbox Options</h3>
+
+    Enter Option Name:
+    <input type="text" id="optionText">
+    <button onclick="addOption()">Add</button>
+
+    <div id="options"></div>
+
+    <script>
+
+        function addOption() {
+
+            let text = document.getElementById("optionText").value;
+
+            if (text === "") {
+                alert("Please enter text");
+                return;
+            }
+
+            let div = document.getElementById("options");
+
+            div.innerHTML += 
+                "<input type='checkbox' value='" + text + "'> " 
+                + text + "<br>";
+
+            document.getElementById("optionText").value = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
