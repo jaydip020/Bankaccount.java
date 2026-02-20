@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Style Change</title>
+    <style>
+        td {
+            border: 1px solid black;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Mouse hover on table to change style of TD</h3>
+
+<table border="1">
+<tr>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+</tr>
+
+<tr>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+<td onmouseover="color(this)" onmouseout="removeColor(this)"></td>
+</tr>
+</table>
+
+<script>
+
+function color(cell) {
+    cell.style.background = "lightblue";
+}
+
+function removeColor(cell) {
+    cell.style.background = "white";
+}
+
+</script>
+
+</body>
+</html>
