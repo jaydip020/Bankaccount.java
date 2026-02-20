@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+
+<h2>Todo List</h2>
+
+Enter Task: <input type="text" id="task"><br><br>
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+
+function addTask() {
+
+    let text = document.getElementById("task").value;
+
+    if (text === "") {
+        alert("Enter task");
+        return;
+    }
+
+    document.getElementById("list").innerHTML += 
+        "<li onclick='this.style.textDecoration=\"line-through\"'>" 
+        + text + 
+        "</li>";
+
+    document.getElementById("task").value = "";
+}
+
+</script>
+
+</body>
+</html>
